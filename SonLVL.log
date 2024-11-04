@@ -1,0 +1,45 @@
+Operating system: Microsoft Windows NT 6.2.9200.0
+Opening INI file "C:\mdproj\sonic-chaos-md\SonPLN.ini"...
+Opening INI file "C:\mdproj\sonic-chaos-md\SonPLN.ini"...
+Game type is S2.
+Loading Options Screen...
+Loading plane mappings from file "mappings/misc/Options screen.eni", using compression Enigma...
+Loading palette file "art/palettes/Main Menu.bin"...
+Source: 0 Destination: 0 Length: 16
+Loading 8x8 tiles from file "art/nemesis/Options.nem", using compression Nemesis...
+Mappings data size does not match given width/height. Expected: 2240 (40x28*2) Actual: 352.
+Load completed.
+System.ArgumentException: Parametr jest nieprawidłowy.
+   w System.Drawing.Bitmap..ctor(String filename)
+   w SonicRetro.SonLVL.SonPLN.MainForm.importToolStripMenuItem_Click(Object sender, EventArgs e) w C:\Programs\SonLVL\SonPLN\MainForm.cs:wiersz 1725
+   w System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   w System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   w System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   w System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   w System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   w System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   w System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   w System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   w System.Windows.Forms.Control.WndProc(Message& m)
+   w System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   w System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   w System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   w System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   w System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+System.ArgumentException: Parametr jest nieprawidłowy.
+   w System.Drawing.Bitmap..ctor(String filename)
+   w SonicRetro.SonLVL.SonPLN.MainForm.importToolStripMenuItem_Click(Object sender, EventArgs e) w C:\Programs\SonLVL\SonPLN\MainForm.cs:wiersz 1725
+   w System.Windows.Forms.ToolStripItem.RaiseEvent(Object key, EventArgs e)
+   w System.Windows.Forms.ToolStripButton.OnClick(EventArgs e)
+   w System.Windows.Forms.ToolStripItem.HandleClick(EventArgs e)
+   w System.Windows.Forms.ToolStripItem.HandleMouseUp(MouseEventArgs e)
+   w System.Windows.Forms.ToolStripItem.FireEventInteractive(EventArgs e, ToolStripItemEventType met)
+   w System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+   w System.Windows.Forms.ToolStrip.OnMouseUp(MouseEventArgs mea)
+   w System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   w System.Windows.Forms.Control.WndProc(Message& m)
+   w System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   w System.Windows.Forms.ToolStrip.WndProc(Message& m)
+   w System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   w System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   w System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
