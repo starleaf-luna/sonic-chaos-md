@@ -1319,8 +1319,11 @@ Sprite_Table_P2_Alternate:	ds.b	$280
 				ds.b	$500	; $FFFFF100-$FFFFF5FF ; unused, leftover from the Sonic 1 sound driver (and used by it when you port it to Sonic 2)
     endif
 
+SpecialStage_ScreenTransition:	ds.b	1
+SpecialStage_ScreenTransitionDepth:	ds.b	1
+SpecialStage_ScreenTransitionMode:	ds.b	1
+
 Game_Mode:			ds.b	1	; see GameModesArray (master level trigger, Mstr_Lvl_Trigger)
-				ds.b	1	; unused
 Ctrl_1_Logical:					; 2 bytes
 Ctrl_1_Held_Logical:		ds.b	1	; 1 byte
 Ctrl_1_Press_Logical:		ds.b	1	; 1 byte
@@ -1332,7 +1335,7 @@ Ctrl_2_Held:			ds.b	1	; 1 byte
 Ctrl_2_Press:			ds.b	1	; 1 byte
 				ds.b	4	; $FFFFF608-$FFFFF60B ; seems unused
 VDP_Reg1_val:			ds.w	1	; normal value of VDP register #1 when display is disabled
-				ds.b	6	; $FFFFF60E-$FFFFF613 ; seems unused
+				ds.b	4	; $FFFFF60E-$FFFFF613 ; seems unused
 Demo_Time_left:			ds.w	1	; 2 bytes
 
 Vscroll_Factor:

@@ -4940,6 +4940,7 @@ MusicList2: zoneOrderedTable 1,1
 ; ---------------------------------------------------------------------------
 ; loc_3EC4:
 Level:
+	clr.b	(SpecialStage_ScreenTransition).w
 	bset	#GameModeFlag_TitleCard,(Game_Mode).w ; add $80 to screen mode (for pre level sequence)
 	tst.w	(Demo_mode_flag).w	; test the old flag for the credits demos (now unused)
 	bmi.s	+
@@ -5270,6 +5271,34 @@ Level_MainLoop:
 	move.b	#VintID_Level,(Vint_routine).w
 	bsr.w	WaitForVint
 	addq.w	#1,(Level_frame_counter).w ; add 1 to level timer
+	tst.b	(SpecialStage_ScreenTransition).w
+	beq.s	.notransition
+	move.w	#$8B03,(VDP_control_port).l
+	move.w	#$8D00+(VRAM_Horiz_Scroll_Table>>10),(VDP_control_port).l
+	move.w	#$8F02,(VDP_control_port).l
+	move.w	#40,d7
+	moveq	#0,d1
+	moveq	#0,d2
+.transition_loop:
+	move.l	#$40000000+((VRAM_Horiz_Scroll_Table&$3FFF)<<16)+((VRAM_Horiz_Scroll_Table&$C000)>>14),(VDP_control_port).l
+	move.w	#224,d6
+.transition_inner_loop:
+	move.w	d1,(VDP_data_port).l
+	move.w	d1,(VDP_data_port).l
+	move.w	d2,d3
+	lsr.w	#7,d3
+	add.w	d3,d1
+	addq.w	#1,d2
+	dbf	d6,.transition_inner_loop
+	move.b	#VintID_Level,(Vint_routine).w
+	bsr.w	WaitForVint
+	lsr.w	#1,d2
+	dbf	d7,.transition_loop
+	clr.b	(SpecialStage_ScreenTransition).w
+	move.b	#GameModeID_SpecialStage,(Game_Mode).w
+	rts
+
+.notransition:
 	bsr.w	MoveSonicInDemo
 	bsr.w	WaterEffects
 	jsr	(RunObjects).l
@@ -15364,6 +15393,8 @@ InitCam_SCZ:
 ; sub_C3D0:
 DeformBgLayer:
 	tst.b	(Deform_lock).w
+	beq.s	+
+	tst.b	(SpecialStage_ScreenTransition).w
 	beq.s	+
 	rts
 ; ---------------------------------------------------------------------------
@@ -75660,6 +75691,8 @@ Obj9D_Index:	offsetTable
 ; loc_37C10:
 Moto_Init:
 	addq.b	#2,routine(a0)
+	rts
+
 	jsr	(AllocateObject).l
 	bne.s	+
 	move.b	#$A,routine(a1)
@@ -75673,7 +75706,6 @@ Moto_Init:
 	move.b	#$14,width_pixels(a1)
 	move.b	#8,mapping_frame(a1)
 	move.w	a0,parent(a1)
-	illegal
 +
 	rts
 
