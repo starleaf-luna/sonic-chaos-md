@@ -87,6 +87,9 @@ boss_defeated		= objoff_2C
 boss_hitcount2		= objoff_32
 boss_hurt_sonic		= objoff_38	; flag set by collision response routine when Sonic has just been hurt (by boss?)
 ; ---------------------------------------------------------------------------
+; conventions followed by most 3D Special Stage objects:
+distance =		objoff_3C ; and $3D
+; ---------------------------------------------------------------------------
 ; when childsprites are activated (i.e. bit #6 of render_flags set)
 next_subspr		= $6
 mainspr_mapframe	= objoff_B
@@ -2156,9 +2159,9 @@ VRAM_SegaScr_Plane_B_Name_Table          = $A000	; Extends until $BFFF
 VRAM_SegaScr_Plane_Table_Size            = $2000	; 128 cells x 32 cells x 2 bytes per cell
 
 ; VRAM Reserved regions, Special Stage.
-VRAM_SS_Plane_A_Name_Table1              = $C000	; Extends until $DFFF
 VRAM_SS_Plane_A_Name_Table2              = $8000	; Extends until $9FFF
 VRAM_SS_Plane_B_Name_Table               = $A000	; Extends until $BFFF
+VRAM_SS_Plane_A_Name_Table1              = $C000	; Extends until $DFFF
 VRAM_SS_Plane_Table_Size                 = $2000	; 128 cells x 32 cells x 2 bytes per cell
 
 ; VRAM Reserved regions, Title screen.
@@ -2212,6 +2215,7 @@ ArtTile_ArtNem_2p_Signpost            = $05E8
 ArtTile_TwoPlayerResults              = $0600
 
 ; Special stage stuff.
+ArtTile_ArtNem_SpecialSonic           = $0174
 ArtTile_ArtNem_SpecialEmerald         = $0174
 ArtTile_ArtNem_SpecialMessages        = $01A2
 ArtTile_ArtNem_SpecialHUD             = $01FA
@@ -2219,7 +2223,6 @@ ArtTile_ArtNem_SpecialFlatShadow      = $023C
 ArtTile_ArtNem_SpecialDiagShadow      = $0262
 ArtTile_ArtNem_SpecialSideShadow      = $029C
 ArtTile_ArtNem_SpecialExplosion       = $02B5
-ArtTile_ArtNem_SpecialSonic           = $02E5
 ArtTile_ArtNem_SpecialTails           = $0300
 ArtTile_ArtNem_SpecialTails_Tails     = $0316
 ArtTile_ArtNem_SpecialRings           = $0322

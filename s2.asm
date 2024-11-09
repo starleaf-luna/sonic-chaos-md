@@ -5114,7 +5114,7 @@ Level_TtlCard:
 +
 	moveq	#PalID_BGND,d0
 	bsr.w	PalLoad_ForFade	; load Sonic's palette line
-	bsr.w	LevelSizeLoad
+	jsr	(LevelSizeLoad).l
 	jsrto	DeformBgLayer, JmpTo_DeformBgLayer
 	clr.w	(Vscroll_Factor_FG).w
 	move.w	#-224,(Vscroll_Factor_P2_FG).w
@@ -6772,6 +6772,39 @@ JmpTo_DrawInitialBG ; JmpTo
 ; ===========================================================================
 ; loc_4F64:
 SpecialStage:
+	move.w	#SndID_SpecStageEntry,d0
+	bsr.w	PlaySound
+	move.b	#MusID_FadeOut,d0
+	bsr.w	PlayMusic
+	bsr.w	Pal_FadeToBlack
+	bsr.w	ClearScreen
+	move	#$2700,sr		; Mask all interrupts
+	lea	(VDP_control_port).l,a6
+	move.w	#$8004,(a6)		; H-INT disabled
+	move.w	#$8200|(VRAM_TtlScr_Plane_A_Name_Table/$400),(a6)	; PNT A base: $C000
+	move.w	#$8400|(VRAM_TtlScr_Plane_B_Name_Table/$2000),(a6)	; PNT B base: $E000
+	move.w	#$9001,(a6)		; Scroll table size: 64x32
+	move.w	#$9200,(a6)		; Disable window
+	move.w	#$8B03,(a6)		; EXT-INT disabled, V scroll by screen, H scroll by line
+	move.w	#$8720,(a6)		; Background palette/color: 2/0
+
+	dmaFillVRAM 0,VRAM_SS_Plane_A_Name_Table2,VRAM_SS_Plane_Table_Size * 3 ; clear Plane A pattern name table 1
+	dmaFillVRAM 0,VRAM_Horiz_Scroll_Table,VRAM_Horiz_Scroll_Table_Size  ; clear Horizontal scroll table
+
+	move.b	#ObjID_SonicSS,(MainCharacter+id)
+	jsr	(RunObjects).l
+	move.b	#PalID_Title,d0
+	move.l	#vdpComm(tiles_to_bytes(ArtTile_ArtNem_SpecialSonic),VRAM,WRITE),(VDP_control_port).l
+	lea	(ArtNem_SpecialSonicAndTails).l,a0
+	bsr.w	NemDec
+	bsr.w	PalLoad_ForFade
+	bsr.w	Pal_FadeFromBlack
+.loop:
+	jsr	(RunObjects).l
+	jsr	(BuildSprites).l
+	bra.s	.loop
+
+SpecialStage_old:
 	cmpi.b	#7,(Current_Special_Stage).w
 	blo.s	+
 	move.b	#0,(Current_Special_Stage).w
@@ -45629,6 +45662,8 @@ Obj0C_CharaSelect:
 	bne.s	.left
 	btst	#button_right,d0
 	bne.s	.right
+	btst	#button_B,d0
+	bne.s	.debug_B
 	andi.b	#button_A_mask|button_start_mask,d0
 	bne.s	.start
 	rts
@@ -45649,6 +45684,10 @@ Obj0C_CharaSelect:
 	move.w	(a1,d0.w),d0
 	move.w	d0,(Player_option).w
 	move.b	#1,(IntroTails+status).w
+	rts
+
+.debug_B:
+	move.b	#GameModeID_SpecialStage,(Game_Mode).w
 	rts
 
 .start:
@@ -69588,7 +69627,6 @@ JmpTo25_ObjectMove ; JmpTo
 ; ----------------------------------------------------------------------------
 ; Sprite_338EC:
 Obj09:
-	bsr.w	loc_33908
 	moveq	#0,d0
 	move.b	routine(a0),d0
 	move.w	Obj09_Index(pc,d0.w),d1
@@ -69601,17 +69639,6 @@ Obj09_Index:	offsetTable
 		offsetTableEntry.w Obj09_MdJump	; 4
 		offsetTableEntry.w Obj09_Index	; 6 - invalid
 		offsetTableEntry.w Obj09_MdAir	; 8
-; ===========================================================================
-
-loc_33908:
-	lea	(SS_Ctrl_Record_Buf_End).w,a1
-
-	moveq	#bytesToWcnt(SS_Ctrl_Record_Buf_End-SS_Ctrl_Record_Buf)-1,d0
--	move.w	-4(a1),-(a1)
-	dbf	d0,-
-
-	move.w	(Ctrl_1_Logical).w,-(a1)
-	rts
 ; ===========================================================================
 ; loc_3391C:
 Obj09_Init:
@@ -69629,45 +69656,20 @@ Obj09_Init:
 	move.b	#7,x_radius(a0)
 	move.l	#Obj09_MapUnc_34212,mappings(a0)
 	move.w	#make_art_tile(ArtTile_ArtNem_SpecialSonic,1,0),art_tile(a0)
+	move.b	#1,mapping_frame(a0)
 	move.b	#4,render_flags(a0)
 	move.b	#3,priority(a0)
 	move.w	#$6E,ss_z_pos(a0)
-	clr.b	(SS_Swap_Positions_Flag).w
 	move.w	#$400,ss_init_flip_timer(a0)
 	move.b	#$40,angle(a0)
-	move.b	#1,(Sonic_LastLoadedDPLC).w
 	clr.b	ss_slide_timer(a0)
 	bclr	#6,status(a0)
 	clr.b	collision_property(a0)
-	clr.b	ss_dplc_timer(a0)
-	movea.l	#SpecialStageShadow_Sonic,a1
-	move.b	#ObjID_SSShadow,id(a1) ; load obj63 (shadow) at $FFFFB140
-	move.w	x_pos(a0),x_pos(a1)
-	move.w	y_pos(a0),y_pos(a1)
-	addi.w	#$18,y_pos(a1)
-	move.l	#Obj63_MapUnc_34492,mappings(a1)
-	move.w	#make_art_tile(ArtTile_ArtNem_SpecialFlatShadow,3,0),art_tile(a1)
-	move.b	#4,render_flags(a1)
-	move.b	#4,priority(a1)
-	move.l	a0,ss_parent(a1)
-	bra.w	LoadSSSonicDynPLC
+	rts
 ; ===========================================================================
 
 Obj09_MdNormal:
-	tst.b	routine_secondary(a0)
-	bne.s	Obj09_Hurt
-	lea	(Ctrl_1_Held_Logical).w,a2
-	bsr.w	SSPlayer_Move
-	bsr.w	SSPlayer_Traction
-	bsr.w	SSPlayerSwapPositions
-	bsr.w	SSObjectMove
-	bsr.w	SSAnglePos
-	bsr.w	SSSonic_Jump
-	bsr.w	SSPlayer_SetAnimation
-	lea	(off_341E4).l,a1
-	bsr.w	SSPlayer_Animate
-	bsr.w	SSPlayer_Collision
-	bra.w	LoadSSSonicDynPLC
+	jsr	(DisplaySprite).l
 ; ===========================================================================
 
 Obj09_Hurt:
