@@ -75693,8 +75693,8 @@ Obj9D_Index:	offsetTable
 ; loc_37C10:
 Moto_Init:
 	addq.b	#2,routine(a0)
-	rts
-
+	tst.b	anim(a0)	; is object a smoke trail?
+	bne.s	.smoke		; if yes, branch
 	jsr	(AllocateObject).l
 	bne.s	+
 	move.b	#$A,routine(a1)
@@ -75710,6 +75710,11 @@ Moto_Init:
 	move.w	a0,parent(a1)
 +
 	rts
+; ===========================================================================
+
+.smoke:
+	addq.b	#4,routine(a0) ; goto Moto_Animate next
+	bra.w	Moto_Animate
 
 Moto_Main:
 	move.l	#Obj9D_Obj98_MapUnc_37D96,mappings(a0)
@@ -75717,8 +75722,6 @@ Moto_Main:
 	move.b	#4,render_flags(a0)
 	move.b	#4,priority(a0)
 	move.b	#$14,width_pixels(a0)
-	tst.b	anim(a0)	; is object a smoke trail?
-	bne.w	.smoke		; if yes, branch
 	move.b	#$E,y_radius(a0)
 	move.b	#8,x_radius(a0)
 	move.b	#$C,collision_flags(a0)
@@ -75733,11 +75736,6 @@ Moto_Main:
 
 .notonfloor:
 	rts	
-; ===========================================================================
-
-.smoke:
-	addq.b	#4,routine(a0) ; goto Moto_Animate next
-	bra.w	Moto_Animate
 ; ===========================================================================
 
 Moto_Action:	; Routine 2
