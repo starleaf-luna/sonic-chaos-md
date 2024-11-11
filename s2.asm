@@ -33432,6 +33432,7 @@ loc_189C0:
 
 loc_189CA:
 	move.w	#(1<<8)|(0<<0),anim(a0)
+loc_189CE:
 	addq.w	#8,y_pos(a1)
 	move.w	objoff_30(a0),y_vel(a1)
 	bset	#1,status(a1)
@@ -75724,7 +75725,7 @@ Moto_Main:
 	move.b	#$14,width_pixels(a0)
 	move.b	#$E,y_radius(a0)
 	move.b	#8,x_radius(a0)
-	move.b	#$C,collision_flags(a0)
+	move.b	#$CC,collision_flags(a0)
 	jsr	(ObjectMoveAndFall).l
 	jsr	(ObjCheckFloorDist).l
 	tst.w	d1
@@ -86113,7 +86114,7 @@ Touch_Special:
 	move.b	collision_flags(a1),d1
 	andi.b	#$3F,d1
 	cmpi.b	#6,d1
-	beq.s	loc_3FA00
+	beq.w	loc_3FA00
 	cmpi.b	#7,d1
 	beq.w	loc_3FA18
 	cmpi.b	#$B,d1
@@ -86157,7 +86158,9 @@ loc_3F9E8:
 	sub.w	d2,d0
 	bcc.s	loc_3F9F4
 	addi.w	#$18,d0
-	bcs.s	BranchTo_Touch_ChkHurt
+	bcc.s	+
+	jmp	(loc_189CE).l
++
 	bra.s	BranchTo_Touch_Enemy
 ; ===========================================================================
 
