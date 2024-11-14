@@ -75684,38 +75684,11 @@ Obj9D:
 ; ===========================================================================
 ; off_37C08:
 Obj9D_Index:	offsetTable
-		offsetTableEntry.w Moto_Init	; 0
-		offsetTableEntry.w Moto_Main	; 2
-		offsetTableEntry.w Moto_Action	; 4
-		offsetTableEntry.w Moto_Animate	; 6
-		offsetTableEntry.w Moto_Delete	; 8
-		offsetTableEntry.w Moto_Spring	; $A
+		offsetTableEntry.w Moto_Main	; 0
+		offsetTableEntry.w Moto_Action	; 2
+		offsetTableEntry.w Moto_Animate	; 4
+		offsetTableEntry.w Moto_Delete	; 6
 ; ===========================================================================
-; loc_37C10:
-Moto_Init:
-	addq.b	#2,routine(a0)
-	tst.b	anim(a0)	; is object a smoke trail?
-	bne.s	.smoke		; if yes, branch
-	jsr	(AllocateObject).l
-	bne.s	+
-	move.b	#$A,routine(a1)
-	_move.b	#ObjID_BoingOBot,id(a1) ; load exhaust smoke object
-	move.w	x_pos(a0),x_pos(a1)
-	move.w	y_pos(a0),y_pos(a1)
-	addi.w	#$10,y_pos(a1)
-	move.b	#2,anim(a1)
-	move.l	#Obj9D_Obj98_MapUnc_37D96,mappings(a1)
-	move.w	#make_art_tile(ArtTile_ArtNem_BoingOBot,0,0),art_tile(a1)
-	move.b	#$14,width_pixels(a1)
-	move.b	#8,mapping_frame(a1)
-	move.w	a0,parent(a1)
-+
-	rts
-; ===========================================================================
-
-.smoke:
-	addq.b	#4,routine(a0) ; goto Moto_Animate next
-	bra.w	Moto_Animate
 
 Moto_Main:
 	move.l	#Obj9D_Obj98_MapUnc_37D96,mappings(a0)
@@ -75725,6 +75698,8 @@ Moto_Main:
 	move.b	#$14,width_pixels(a0)
 	move.b	#$E,y_radius(a0)
 	move.b	#8,x_radius(a0)
+	tst.b	anim(a0)	; is object a smoke trail?
+	bne.s	.smoke		; if yes, branch
 	move.b	#$CC,collision_flags(a0)
 	jsr	(ObjectMoveAndFall).l
 	jsr	(ObjCheckFloorDist).l
@@ -75737,6 +75712,10 @@ Moto_Main:
 
 .notonfloor:
 	rts	
+
+.smoke:
+	addq.b	#4,routine(a0) ; goto Moto_Animate next
+	bra.w	Moto_Animate
 ; ===========================================================================
 
 Moto_Action:	; Routine 2
@@ -75808,15 +75787,6 @@ Moto_Animate:	; Routine 4
 
 Moto_Delete:	; Routine 6
 	jmp	(DeleteObject).l
-
-Moto_Spring:	; Routine 8
-	movea.w	parent(a0),a1
-	move.w	x_pos(a1),x_pos(a0)
-	move.w	y_pos(a1),d0
-	subi.w	#$40,d0
-	move.w	d0,y_pos(a0)
-	jsr	(DisplaySprite).l
-	jmp	(MarkObjGone3).l
 	
 ; ===========================================================================
 ; word_37D76:
