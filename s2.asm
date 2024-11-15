@@ -33432,9 +33432,9 @@ loc_189C0:
 
 loc_189CA:
 	move.w	#(1<<8)|(0<<0),anim(a0)
-loc_189CE:
 	addq.w	#8,y_pos(a1)
 	move.w	objoff_30(a0),y_vel(a1)
+loc_189CE:
 	bset	#1,status(a1)
 	bclr	#3,status(a1)
 	move.b	#AniIDSonAni_Spring,anim(a1)
@@ -85561,7 +85561,6 @@ JmpTo20_AllocateObject ; JmpTo
 
 ; loc_3F554:
 TouchResponse:
-	nop
 	jsrto	Touch_Rings, JmpTo_Touch_Rings
 	; Bumpers in CNZ
 	cmpi.b	#casino_night_zone,(Current_Zone).w
@@ -85975,7 +85974,6 @@ Touch_NoHurt:
 ; ---------------------------------------------------------------------------
 ; loc_3F86E:
 Touch_Hurt:
-	nop
 	tst.w	invulnerable_time(a0)
 	bne.s	Touch_NoHurt
 	movea.l	a1,a2
@@ -86121,13 +86119,15 @@ loc_3F9CE:
 	move.w	x_pos(a1),d0
 	subq.w	#4,d0
 	btst	#0,status(a1)
-	beq.s	loc_3F9E8
+	beq.s	+
 	subi.w	#$10,d0
-
-loc_3F9E8:
++
 	sub.w	d2,d0
 	bcc.s	loc_3F9F4
 	addi.w	#$18,d0
+	move.l	MainCharacter,a1
+	addq.w	#$16,y_pos(a1)
+	move.w	#-$1000,y_vel(a1)
 	bcc.s	+
 	jmp	(loc_189CE).l
 +
