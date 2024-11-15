@@ -86088,33 +86088,39 @@ Touch_Special:
 	cmpi.b	#$B,d1
 	beq.s	BranchTo_loc_3F85C
 	cmpi.b	#$A,d1
-	beq.s	loc_3FA00
+	beq.s	BranchTo_loc_3FA00
 	cmpi.b	#$C,d1
 	beq.s	loc_3F9CE
 	cmpi.b	#$14,d1
-	beq.s	loc_3FA00
+	beq.s	BranchTo_loc_3FA00
 	cmpi.b	#$15,d1
-	beq.s	loc_3FA00
+	beq.s	BranchTo_loc_3FA00
 	cmpi.b	#$16,d1
-	beq.s	loc_3FA00
+	beq.s	BranchTo_loc_3FA00
 	cmpi.b	#$17,d1
-	beq.s	loc_3FA00
+	beq.s	BranchTo_loc_3FA00
 	cmpi.b	#$18,d1
-	beq.s	loc_3FA00
+	beq.s	BranchTo_loc_3FA00
 	cmpi.b	#$1A,d1
-	beq.s	loc_3FA22
+	beq.s	BranchTo_loc_3FA22
 	cmpi.b	#$21,d1
 	beq.s	loc_3FA12
 	rts
 ; ===========================================================================
 
-BranchTo_loc_3F85C ; BranchTo
+BranchTo_loc_3F85C: ; BranchTo
 	bra.w	loc_3F85C
+
+BranchTo_loc_3FA00:
+	bra.w	loc_3FA00
+
+BranchTo_loc_3FA22:
+	bra.w	loc_3FA22
 ; ===========================================================================
 
 loc_3F9CE:
 	sub.w	d0,d5
-	cmpi.w	#8,d5
+	cmpi.w	#$80,d5
 	bhs.s	BranchTo_Touch_Enemy
 	move.w	x_pos(a1),d0
 	subq.w	#4,d0
@@ -86122,12 +86128,15 @@ loc_3F9CE:
 	beq.s	+
 	subi.w	#$10,d0
 +
+	clr.w	d2
+	move.b	width_pixels(a1),d2
+	neg.w	d2
 	sub.w	d2,d0
 	bcc.s	loc_3F9F4
 	addi.w	#$18,d0
 	move.l	MainCharacter,a1
-	addq.w	#$16,y_pos(a1)
-	move.w	#-$1000,y_vel(a1)
+	subi.w	#$60,y_pos(a0)
+	move.w	#-$1000,y_vel(a0)
 	bcc.s	+
 	jmp	(loc_189CE).l
 +
