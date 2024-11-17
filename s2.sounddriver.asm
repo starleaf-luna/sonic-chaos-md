@@ -3808,7 +3808,7 @@ zMusIDPtr_CNZ_2P:	music_metadata 1,0,0,MusPtr_CNZ_2P
 zMusIDPtr_CNZ:		music_metadata 1,0,0,MusPtr_CNZ
 zMusIDPtr_DEZ:		music_metadata 1,0,0,MusPtr_DEZ
 zMusIDPtr_MCZ:		music_metadata 1,0,0,MusPtr_MCZ
-zMusIDPtr_EHZ_2P:	music_metadata 1,0,0,MusPtr_EHZ_2P
+zMusIDPtr_EHZ_2P:	music_metadata 0,0,1,MusPtr_EHZ_2P
 zMusIDPtr_SCZ:		music_metadata 1,0,0,MusPtr_SCZ
 zMusIDPtr_CPZ:		music_metadata 1,0,0,MusPtr_CPZ
 zMusIDPtr_WFZ:		music_metadata 1,0,0,MusPtr_WFZ

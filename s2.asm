@@ -4889,7 +4889,7 @@ CharaSelectBGPalTable:
 ;----------------------------------------------------------------------------
 ; byte_3EA0:
 MusicList: zoneOrderedTable 1,1
-	zoneTableEntry.b MusID_EHZ	; EHZ
+	zoneTableEntry.b MusID_EHZ_2P	; EHZ
 	zoneTableEntry.b MusID_EHZ	; Zone 1
 	zoneTableEntry.b MusID_MTZ	; WZ
 	zoneTableEntry.b MusID_OOZ	; Zone 3
@@ -92140,9 +92140,11 @@ SndDAC_End
 MusicPoint1:	startBank
 MusPtr_Continue:	rom_ptr_z80	Mus_Continue
 MusPtr_EHZ:		rom_ptr_z80	Mus_EHZ
+MusPtr_EHZ_2P:		rom_ptr_z80	Mus_EHZ_2P
 
 Mus_Continue:   BINCLUDE	"sound/music/compressed/9C - Continue.sax"
 Mus_EHZ:	include	"sound/music/82 - EHZ.asm"
+Mus_EHZ_2P:	include	"sound/music/8C - EHZ 2P.asm"
 
 	finishBank
 
@@ -92254,7 +92256,6 @@ MusPtr_Boss:		rom_ptr_z80	Mus_Boss
 MusPtr_SCZ:		rom_ptr_z80	Mus_SCZ
 MusPtr_OOZ:		rom_ptr_z80	Mus_OOZ
 MusPtr_WFZ:		rom_ptr_z80	Mus_WFZ
-MusPtr_EHZ_2P:		rom_ptr_z80	Mus_EHZ_2P
 MusPtr_2PResult:	rom_ptr_z80	Mus_2PResult
 MusPtr_SuperSonic:	rom_ptr_z80	Mus_SuperSonic
 MusPtr_HTZ:		rom_ptr_z80	Mus_HTZ
@@ -92288,7 +92289,6 @@ Mus_Boss:	BINCLUDE	"sound/music/compressed/93 - Boss.sax"
 Mus_SCZ:	BINCLUDE	"sound/music/compressed/8D - SCZ.sax"
 Mus_OOZ:	BINCLUDE	"sound/music/compressed/84 - OOZ.sax"
 Mus_WFZ:	BINCLUDE	"sound/music/compressed/8F - WFZ.sax"
-Mus_EHZ_2P:	BINCLUDE	"sound/music/compressed/8C - EHZ 2P.sax"
 Mus_2PResult:	BINCLUDE	"sound/music/compressed/81 - 2 Player Menu.sax"
 Mus_SuperSonic:	BINCLUDE	"sound/music/compressed/96 - Super Sonic.sax"
 Mus_HTZ:	BINCLUDE	"sound/music/compressed/86 - HTZ.sax"

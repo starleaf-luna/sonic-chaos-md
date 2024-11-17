@@ -8,7 +8,6 @@
 89 - CNZ
 8A - DEZ
 8B - MCZ
-8C - EHZ 2P
 8D - SCZ
 8E - CPZ
 8F - WFZ
