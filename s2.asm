@@ -4889,7 +4889,7 @@ CharaSelectBGPalTable:
 ;----------------------------------------------------------------------------
 ; byte_3EA0:
 MusicList: zoneOrderedTable 1,1
-	zoneTableEntry.b MusID_EHZ_2P	; EHZ
+	zoneTableEntry.b MusID_EHZ	; EHZ
 	zoneTableEntry.b MusID_EHZ	; Zone 1
 	zoneTableEntry.b MusID_MTZ	; WZ
 	zoneTableEntry.b MusID_OOZ	; Zone 3
@@ -39163,7 +39163,13 @@ Tails_CheckFly:
 	beq.s	+
 	move.w	#1,fly_timer(a0)
 +
-	move.w	#-$160,y_vel(a0)
+	move.w	#-$160,d0
+	move.w	status(a0),d1
+	andi.b	#staWater,d1
+	beq.s	+
+	move.w	#-$40,d0
++
+	move.w	d0,y_vel(a0)
 	rts
 
 ; ---------------------------------------------------------------------------
