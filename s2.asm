@@ -86140,7 +86140,7 @@ loc_3F9CE:
 	sub.w	d2,d0
 	bcc.s	loc_3F9F4
 	addi.w	#$18,d0
-	move.l	MainCharacter,a1
+	lea	MainCharacter,a1
 	subi.w	#$60,y_pos(a0)
 	move.w	#-$1000,y_vel(a0)
 	bcc.s	+
