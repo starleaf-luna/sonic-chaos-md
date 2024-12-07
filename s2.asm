@@ -86110,18 +86110,21 @@ Touch_Special:
 	cmpi.b	#$1A,d1
 	beq.s	BranchTo_loc_3FA22
 	cmpi.b	#$21,d1
-	beq.s	loc_3FA12
+	beq.s	BranchTo_loc_3FA12
 	rts
 ; ===========================================================================
 
 BranchTo_loc_3F85C: ; BranchTo
 	bra.w	loc_3F85C
 
-BranchTo_loc_3FA00:
+BranchTo_loc_3FA00: ; BranchTo
 	bra.w	loc_3FA00
 
-BranchTo_loc_3FA22:
+BranchTo_loc_3FA22: ; BranchTo
 	bra.w	loc_3FA22
+
+BranchTo_loc_3FA12: ; BranchTo
+	bra.w	loc_3FA12
 ; ===========================================================================
 
 loc_3F9CE:
@@ -86132,21 +86135,24 @@ loc_3F9CE:
 	subq.w	#4,d0
 	btst	#0,status(a1)
 	beq.s	+
-	subi.w	#$10,d0
+	subi.w	#$2,d0
 +
 	clr.w	d2
 	move.b	width_pixels(a1),d2
 	neg.w	d2
+	subi.w	#$10,d2
 	sub.w	d2,d0
-	bcc.s	loc_3F9F4
-	addi.w	#$18,d0
-	lea	MainCharacter,a1
-	subi.w	#$60,y_pos(a0)
-	move.w	#-$1000,y_vel(a0)
 	bcc.s	+
-	jmp	(loc_189CE).l
+	addi.w	#$18,d0
+	subi.w	#$20,y_pos(a0)
+	move.w	#-$1000,y_vel(a0)
+	bset	#1,status(a0)
+	bclr	#3,status(a0)
+	move.b	#AniIDSonAni_Spring,anim(a0)
+	move.b	#SndID_Spring,d0
+	jmp	(PlaySound).l
 +
-	bra.s	BranchTo_Touch_Enemy
+	bra.s	BranchTo_Touch_ChkHurt
 ; ===========================================================================
 
 loc_3F9F4:
