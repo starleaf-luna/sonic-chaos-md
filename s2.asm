@@ -4889,8 +4889,8 @@ CharaSelectBGPalTable:
 ;----------------------------------------------------------------------------
 ; byte_3EA0:
 MusicList: zoneOrderedTable 1,1
-	zoneTableEntry.b MusID_EHZ		; EHZ
-	zoneTableEntry.b MusID_EHZ_2P	; Zone 1
+	zoneTableEntry.b MusID_EHZ_2P	; Turquoise Hill zone 1
+	zoneTableEntry.b MusID_EHZ_2P	; Turquoise Hill zone 2
 	zoneTableEntry.b MusID_MTZ	; WZ
 	zoneTableEntry.b MusID_OOZ	; Zone 3
 	zoneTableEntry.b MusID_MTZ	; MTZ1,2
@@ -5086,14 +5086,14 @@ Level_GetBgm:
 	bmi.s	+
 	moveq	#0,d0
 	move.b	(Current_Zone).w,d0
-	lsl.b	#1,d0
-	addq.b	(Current_Act).w,d0
-	lea_	MusicList,a1
-	tst.w	(Two_player_mode).w
 	beq.s	Level_PlayBgm
 	lea_	MusicList2,a1
 ; loc_40C8:
 Level_PlayBgm:
+	lsl.b	#1,d0
+	add.b	(Current_Act).w,d0
+	lea_	MusicList,a1
+	tst.w	(Two_player_mode).w
 	move.b	(a1,d0.w),d0		; load from music playlist
 	move.w	d0,(Level_Music).w	; store level music
 	bsr.w	PlayMusic		; play level music
@@ -86118,7 +86118,7 @@ Touch_Special:
 ; for Boing-o-Bot
 loc_3F9CE:
 	sub.w	d0,d5
-	cmpi.w	#$18,d5
+	cmpi.w	#8,d5
 	bhs.s	BranchTo_Touch_Enemy
 	move.w	x_pos(a1),d0
 	subq.w	#4,d0
