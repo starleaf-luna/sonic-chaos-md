@@ -4889,8 +4889,8 @@ CharaSelectBGPalTable:
 ;----------------------------------------------------------------------------
 ; byte_3EA0:
 MusicList: zoneOrderedTable 1,1
-	zoneTableEntry.b MusID_EHZ	; EHZ
-	zoneTableEntry.b MusID_EHZ	; Zone 1
+	zoneTableEntry.b MusID_EHZ		; EHZ
+	zoneTableEntry.b MusID_EHZ_2P	; Zone 1
 	zoneTableEntry.b MusID_MTZ	; WZ
 	zoneTableEntry.b MusID_OOZ	; Zone 3
 	zoneTableEntry.b MusID_MTZ	; MTZ1,2
@@ -5086,6 +5086,8 @@ Level_GetBgm:
 	bmi.s	+
 	moveq	#0,d0
 	move.b	(Current_Zone).w,d0
+	lsl.b	#1,d0
+	addq.b	(Current_Act).w,d0
 	lea_	MusicList,a1
 	tst.w	(Two_player_mode).w
 	beq.s	Level_PlayBgm
