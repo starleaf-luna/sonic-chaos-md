@@ -75702,7 +75702,7 @@ Moto_Main:
 	move.b	#4,render_flags(a0)
 	move.b	#4,priority(a0)
 	move.b	#$14,width_pixels(a0)
-	move.b	#$E,y_radius(a0)
+	move.b	#$13,y_radius(a0)
 	move.b	#8,x_radius(a0)
 	tst.b	anim(a0)	; is object a smoke trail?
 	bne.s	.smoke		; if yes, branch
@@ -86092,44 +86092,31 @@ Touch_Special:
 	cmpi.b	#7,d1
 	beq.w	loc_3FA18
 	cmpi.b	#$B,d1
-	beq.s	BranchTo_loc_3F85C
+	beq.w	loc_3F85C
 	cmpi.b	#$A,d1
-	beq.s	BranchTo_loc_3FA00
+	beq.w	loc_3FA00
 	cmpi.b	#$C,d1
-	beq.s	loc_3F9CE
+	beq.w	loc_3F9CE
 	cmpi.b	#$14,d1
-	beq.s	BranchTo_loc_3FA00
+	beq.w	loc_3FA00
 	cmpi.b	#$15,d1
-	beq.s	BranchTo_loc_3FA00
+	beq.w	loc_3FA00
 	cmpi.b	#$16,d1
-	beq.s	BranchTo_loc_3FA00
+	beq.w	loc_3FA00
 	cmpi.b	#$17,d1
-	beq.s	BranchTo_loc_3FA00
+	beq.w	loc_3FA00
 	cmpi.b	#$18,d1
-	beq.s	BranchTo_loc_3FA00
+	beq.w	loc_3FA00
 	cmpi.b	#$1A,d1
-	beq.s	BranchTo_loc_3FA22
+	beq.w	loc_3FA22
 	cmpi.b	#$21,d1
-	beq.s	BranchTo_loc_3FA12
+	beq.w	loc_3FA12
 	rts
 ; ===========================================================================
-
-BranchTo_loc_3F85C: ; BranchTo
-	bra.w	loc_3F85C
-
-BranchTo_loc_3FA00: ; BranchTo
-	bra.w	loc_3FA00
-
-BranchTo_loc_3FA22: ; BranchTo
-	bra.w	loc_3FA22
-
-BranchTo_loc_3FA12: ; BranchTo
-	bra.w	loc_3FA12
-; ===========================================================================
-
+; for Boing-o-Bot
 loc_3F9CE:
 	sub.w	d0,d5
-	cmpi.w	#$80,d5
+	cmpi.w	#$18,d5
 	bhs.s	BranchTo_Touch_Enemy
 	move.w	x_pos(a1),d0
 	subq.w	#4,d0
@@ -86145,9 +86132,10 @@ loc_3F9CE:
 	bcc.s	+
 	addi.w	#$18,d0
 	subi.w	#$20,y_pos(a0)
-	move.w	#-$1000,y_vel(a0)
+	move.w	#-$A00,y_vel(a0)
 	bset	#1,status(a0)
 	bclr	#3,status(a0)
+	clr.b	jumping(a0)
 	move.b	#AniIDSonAni_Spring,anim(a0)
 	move.b	#SndID_Spring,d0
 	jmp	(PlaySound).l
