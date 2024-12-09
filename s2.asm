@@ -86138,6 +86138,7 @@ loc_3F9CE:
 	bset	#1,status(a0)
 	bclr	#3,status(a0)
 	clr.b	jumping(a0)
+	move.b	#2,double_jump_flag(a0)
 	move.b	#AniIDSonAni_Spring,anim(a0)
 	move.b	#SndID_Spring,d0
 	jmp	(PlaySound).l
