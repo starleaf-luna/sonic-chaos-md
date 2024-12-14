@@ -1,376 +1,442 @@
-TurquoiseHillAct2_Header:
+TurquoiseHillZone2_Header:
 	smpsHeaderStartSong 1
-	smpsHeaderVoice     TurquoiseHillAct2_Voices
+	smpsHeaderVoice     TurquoiseHillZone2_Voices
 	smpsHeaderChan      $06, $03
 	smpsHeaderTempo     $02, $02
 
-	smpsHeaderDAC       TurquoiseHillAct2_DAC
-	smpsHeaderFM        TurquoiseHillAct2_FM1,	$30, $00
-	smpsHeaderFM        TurquoiseHillAct2_FM2,	$30, $00
-	smpsHeaderFM        TurquoiseHillAct2_FM3,	$24, $00
-	smpsHeaderFM        TurquoiseHillAct2_FM4,	$00, $00
-	smpsHeaderFM        TurquoiseHillAct2_FM5,	$00, $00
-	smpsHeaderPSG       TurquoiseHillAct2_PSG1,	$D0, $00, $00, $00
-	smpsHeaderPSG       TurquoiseHillAct2_PSG2,	$D0, $00, $00, $00
-	smpsHeaderPSG       TurquoiseHillAct2_PSG3,	$00, $00, $00, $00
+	smpsHeaderDAC       TurquoiseHillZone2_DAC
+	smpsHeaderFM        TurquoiseHillZone2_FM1,	smpsPitch02hi, $00
+	smpsHeaderFM        TurquoiseHillZone2_FM2,	smpsPitch02hi, $00
+	smpsHeaderFM        TurquoiseHillZone2_FM3,	smpsPitch01hi, $00
+	smpsHeaderFM        TurquoiseHillZone2_FM4,	$00, $00
+	smpsHeaderFM        TurquoiseHillZone2_FM5,	$00, $00
+	smpsHeaderPSG       TurquoiseHillZone2_PSG1,	$D0, $00, $00, $00
+	smpsHeaderPSG       TurquoiseHillZone2_PSG2,	$D0, $00, $00, $00
+	smpsHeaderPSG       TurquoiseHillZone2_PSG3,	$00, $00, $00, $00
+
 
 ; DAC Data
-TurquoiseHillAct2_DAC:
+TurquoiseHillZone2_DAC:
 	smpsPan             panCenter, $00
-	dc.b	dVLowTimpani, $01, dVLowTimpani, $01, dVLowTimpani, $01, dVLowTimpani, $01, dVLowTimpani, $02, dKick, $02
-	dc.b	dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02
-	dc.b	dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02
-	dc.b	dKick, $02, dKick, $01, dKick, $03, dKick, $02, dKick, $02, dKick, $02
-	dc.b	dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02
-	dc.b	dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $01
-	dc.b	dKick, $03, dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02
-	dc.b	dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02, dKick, $02
-	dc.b	dKick, $02, dKick, $02, dKick, $02, dKick, $01, dKick, $07, dKick, $01
-	dc.b	dKick, $01, dKick, $01, dKick, $01, dKick, $01, dKick, $03, dKick
+	dc.b	dVLowTimpani, $01, dVLowTimpani, $02, dVLowTimpani, $02, dVLowTimpani, $01, dVLowTimpani, $01, dVLowTimpani, $01
+	dc.b	dVLowTimpani, $01, dVLowTimpani, $02, dVLowTimpani, $01, dVLowTimpani, $02, dVLowTimpani, $01, dVLowTimpani, $09
+	dc.b	dKick, $06, dKick, $01, dKick, $09, dKick, $06, dKick, $01, dKick, $09
+	dc.b	dKick, $06, dKick, $01, dKick, $09, dKick, $06, dKick, $01, dKick, $09
+	dc.b	dKick, $06, dKick, $01, dKick, $09, dKick, $06, dKick, $01, dKick, $09
+	dc.b	dKick, $06, dKick, $01, dKick, $08, dKick, $04, dKick, $0D, dKick, $06
+	dc.b	dKick, $01, dKick, $09, dKick, $06, dKick, $01, dKick, $09, dKick, $06
+	dc.b	dKick, $01, dKick, $09, dKick, $06, dKick, $01, dKick, $09, dKick, $06
+	dc.b	dKick, $01, dKick, $09, dKick, $06, dKick, $01, dKick, $09, dKick, $06
+	dc.b	dKick, $01, dKick, $08, dKick, $04, dKick, $0D, dKick, $06, dKick, $01
+	dc.b	dKick, $09, dKick, $06, dKick, $01, dKick, $09, dKick, $06, dKick, $01
+	dc.b	dKick, $09, dKick, $06, dKick, $01, dKick, $09, dKick, $06, dKick, $01
+	dc.b	dKick, $09, dKick, $06, dKick, $01, dKick, $09, dKick, $06, dKick, $01
+	dc.b	dKick, $08, dKick, $04, dKick, $1D, dKick, $03, dKick, $05, dKick, $01
+	dc.b	dKick, $03, dKick, $01, dKick, $03, dKick, $01, dKick, $03, dKick, $01
+	dc.b	dKick, $0A, dKick
 	smpsStop
 
 ; FM1 Data
-TurquoiseHillAct2_FM1:
+TurquoiseHillZone2_FM1:
 	smpsSetvoice        $00
 	smpsPan             panCenter, $00
 	smpsAlterVol        $0F
-	dc.b	nEb2, $01, nEb2, nRst, $01, nBb1, nEb2, nRst, $01, nD2, nCs2, nD2, nD2
-	dc.b	nRst, $01, nCs2, nCs2, nRst, $01, nAb1, nAb1, nE2, nRst, $01
+	dc.b	nEb2, $01, nEb2, $01, nRst, $01, nBb1, $02, nEb2, $01, nD2, $01
+	dc.b	nCs2, $01, nD2, $01, nD2, $01, nRst, $01, nCs2, $01, nCs2, $01
+	dc.b	nRst, $01, nAb1, $01, nAb1, $01, nE2, $02
 	smpsAlterVol        $12
-	dc.b	nE2, $01, nRst, $01
+	dc.b	nE2, $08
 	smpsAlterVol        $EE
-	dc.b	nEb1, nE1, nFs1, nA1, nB1, nRst, $01, nCs2, nE2, nRst, $01
+	dc.b	nEb1, $01, nE1, nFs1, $01, nA1, $01, nB1, $01, nCs2, $02, nE2
+	dc.b	$02
 	smpsAlterVol        $12
-	dc.b	nE2, nRst, $01
+	dc.b	nE2, $04
 	smpsAlterVol        $EE
-	dc.b	nEb2, nRst, $01, nFs1, nAb1, nA1, nB1, nRst, $01, nCs2, nE2, nRst
-	dc.b	$01
+	dc.b	nEb2, $04, nFs1, $01, nAb1, $01, nA1, $01, nB1, $01, nCs2, $02
+	dc.b	nE2, $02
 	smpsAlterVol        $12
-	dc.b	nE2, $01, nRst, $01
+	dc.b	nE2, $08
 	smpsAlterVol        $EE
-	dc.b	nEb1, nE1, nFs1, nA1, nB1, nRst, $01, nCs2, nE2, nRst, $01
+	dc.b	nEb1, $01, nE1, nFs1, $01, nA1, $01, nB1, $01, nCs2, $02, nE2
+	dc.b	$02
 	smpsAlterVol        $12
-	dc.b	nE2
+	dc.b	nE2, $01
 	smpsAlterVol        $EE
-	dc.b	nEb2, $01, nCs2, nEb2, nRst, $01, nCs2, nB1, nCs2, nB1, nRst, $01
-	dc.b	nA1, nFs1, nE2, nRst, $01
+	dc.b	nEb2, $05, nCs2, $01, nEb2, $01, nCs2, $01, nB1, $01, nCs2, $01
+	dc.b	nB1, $01, nA1, $01, nFs1, $01, nE2, $02
 	smpsAlterVol        $12
-	dc.b	nE2, $01, nRst, $01
+	dc.b	nE2, $08
 	smpsAlterVol        $EE
-	dc.b	nEb1, nE1, nFs1, nA1, nB1, nRst, $01, nCs2, nE2, nRst, $01
+	dc.b	nEb1, $01, nE1, nFs1, $01, nA1, $01, nB1, $01, nCs2, $02, nE2
+	dc.b	$02
 	smpsAlterVol        $12
-	dc.b	nE2, nRst, $01
+	dc.b	nE2, $04
 	smpsAlterVol        $EE
-	dc.b	nEb2, nRst, $01, nFs1, nAb1, nA1, nB1, nRst, $01, nCs2, nE2, nRst
-	dc.b	$01
+	dc.b	nEb2, $04, nFs1, $01, nAb1, $01, nA1, $01, nB1, $01, nCs2, $02
+	dc.b	nE2, $02
 	smpsAlterVol        $12
-	dc.b	nE2, $01, nRst, $01
+	dc.b	nE2, $08
 	smpsAlterVol        $EE
-	dc.b	nEb1, nE1, nFs1, nA1, nB1, nRst, $01, nCs2, nEb2, nEb2, nRst, $01
-	dc.b	nBb1, nEb2, nRst, $01, nD2, nCs2, nD2, nD2, nRst, $01, nCs2, nCs2
-	dc.b	nRst, $01, nAb1, nAb1, nA2, nAb2, nRst, $01, nA2, nFs2, nRst, $01
-	dc.b	nCs2, nE2, nRst, $01
+	dc.b	nEb1, $01, nE1, nFs1, $01, nA1, $01, nB1, $01, nCs2, $02, nEb2
+	dc.b	$01, nEb2, $01, nRst, $01, nBb1, $02, nEb2, $01, nD2, $01, nCs2
+	dc.b	$01, nD2, $01, nD2, $01, nRst, $01, nCs2, $01, nCs2, $01, nRst
+	dc.b	$01, nAb1, $01, nAb1, $01, nA2, $01, nAb2, $01, nA2, $02, nFs2
+	dc.b	$02, nCs2, $02, nE2, $02
 	smpsAlterVol        $12
-	dc.b	nE2
+	dc.b	nE2, $01
 	smpsAlterVol        $EE
-	dc.b	nFs2, $01, nB1, nC2, nRst, $01, nCs2, nD2, nB2, nC3, $01, nB2
+	dc.b	nFs2, $05, nB1, $01, nC2, $01, nCs2, $01, nD2, $01, nB2, $01
+	dc.b	nC3, $02, nB2, $02
 	smpsAlterVol        $12
-	dc.b	nB2, nRst, $01
+	dc.b	nB2, $01
 	smpsAlterVol        $EE
-	dc.b	nA2, nFs2, nRst, $01, nE2, nE2, $01, nFs2, nRst, $01, nCs2, nEb2
-	dc.b	$01, nRst, $01, nB0, nC1, nCs1, nRst, $01, nE1, nF1, nFs1, nB1
-	dc.b	$01, nA1, nAb1, $01, nA1, nB1, nCs2, nRst, $01, nD2, nE2, nCs3
-	dc.b	nB2, nRst, $01, nCs3, nC3, nRst, $01, nB2, nA2, $02, nEb2, nE2
-	dc.b	nRst, $01, nEb2, nE2, nRst, $01, nFs2, nA2, $01, nB2, nRst, $01
-	dc.b	nE2, nFs2, nAb2, nRst, $01, nFs2, nAb2, nRst, $01, nE2, nFs2, $01
-	dc.b	nRst, $01, nCs2, nRst, $01, nB1, nA1, nB1, nA1, nRst, $01, nAb1
-	dc.b	nFs1, nAb1, nE1, nRst, $01, nAb1, nB1, nE1, nCs1, nRst, $01, nB0
-	dc.b	nA0, nA2, nAb2, nRst, $01, nA2, nFs2, nRst, $01, nCs2, nE2, nRst
-	dc.b	$01
+	dc.b	nA2, $02, nFs2, $02, nE2, $02, nE2, $03, nFs2, $03, nCs2, nEb2
+	dc.b	$06, nRst, $04, nB0, $01, nC1, nCs1, $01, nE1, $01, nF1, $01
+	dc.b	nFs1, $01, nB1, $02, nA1, $02, nAb1, $02, nA1, $01, nB1, $01
+	dc.b	nCs2, $01, nD2, $01, nE2, $01, nCs3, $01, nB2, $01, nCs3, $01
+	dc.b	nRst, $01, nC3, $01, nRst, $02, nB2, $01, nRst, $01, nA2, $07
+	dc.b	nEb2, $01, nE2, $01, nEb2, $02, nE2, $02, nFs2, $02, nA2, $03
+	dc.b	nB2, $03, nE2, $02, nFs2, nRst, $01, nAb2, $01, nRst, $01, nFs2
+	dc.b	nRst, $01, nAb2, $01, nRst, $01, nE2, nFs2, $06, nRst, $04, nCs2
+	dc.b	$02, nB1, $01, nA1, $01, nB1, $01, nA1, $01, nAb1, $01, nFs1
+	dc.b	$01, nAb1, $01, nE1, $01, nAb1, $01, nB1, $01, nE1, $01, nCs1
+	dc.b	$01, nB0, $01, nA0, $01, nA2, $01, nAb2, $01, nA2, $02, nFs2
+	dc.b	$02, nCs2, $02, nE2, $02
 	smpsAlterVol        $12
-	dc.b	nE2
+	dc.b	nE2, $01
 	smpsAlterVol        $EE
-	dc.b	nFs2, $01, nB1, nC2, nRst, $01, nCs2, nD2, nB2, nC3, $01, nB2
+	dc.b	nFs2, $05, nB1, $01, nC2, $01, nCs2, $01, nD2, $01, nB2, $01
+	dc.b	nC3, $02, nB2, $02
 	smpsAlterVol        $12
-	dc.b	nB2, nRst, $01
+	dc.b	nB2, $01
 	smpsAlterVol        $EE
-	dc.b	nA2, nFs2, nRst, $01, nE2, nE2, $01, nFs2, nRst, $01, nCs2, nEb2
-	dc.b	$01, nRst, $01, nB0, nC1, nCs1, nRst, $01, nE1, nF1, nFs1, nB1
-	dc.b	$01, nA1, nAb1, $01, nA1, nB1, nCs2, nRst, $01, nD2, nE2, nCs3
-	dc.b	nB2, nRst, $01, nCs3, nC3, nRst, $01, nB2, nA2, $02, nEb2, nE2
-	dc.b	nRst, $01, nEb2, nCs2, nB1, nCs2, nRst, $01, nEb2, nE2, nFs2, $01
-	dc.b	nA2, nRst, $01, nAb2, nFs2, nAb2, nRst, $01, nFs2, nAb2, nRst, $01
-	dc.b	nE2, nFs2, $01, nRst, $01, nCs2, nRst, $01, nB1, nA1, nB1, nA1
-	dc.b	nRst, $01, nAb1, nFs1, nAb1, nE1, nRst, $01, nAb1, nB1, nE1, nCs1
-	dc.b	nRst, $01, nB0, nA0, nRst, $01, nEb1, nEb1, nRst, $01, nB0, nAb1
-	dc.b	nRst, $01, nE1, nRst, $01, nEb1, nRst, $01, nEb1, nEb1, nRst, $01
-	dc.b	nCs1, nEb1, $01, nE1, nRst, $02, nEb1, nEb1, nRst, $01, nB0, nAb1
-	dc.b	nRst, $01, nE1, nRst, $01
+	dc.b	nA2, $02, nFs2, $02, nE2, $02, nE2, $03, nFs2, $03, nCs2, nEb2
+	dc.b	$06, nRst, $04, nB0, $01, nC1, nCs1, $01, nE1, $01, nF1, $01
+	dc.b	nFs1, $01, nB1, $02, nA1, $02, nAb1, $02, nA1, $01, nB1, $01
+	dc.b	nCs2, $01, nD2, $01, nE2, $01, nCs3, $01, nB2, $01, nCs3, $01
+	dc.b	nRst, $01, nC3, $01, nRst, $02, nB2, $01, nRst, $01, nA2, $07
+	dc.b	nEb2, $01, nE2, $01, nEb2, $01, nCs2, $01, nB1, $01, nCs2, $01
+	dc.b	nEb2, $01, nE2, $01, nFs2, $03, nA2, $03, nAb2, $02, nFs2, nRst
+	dc.b	$01, nAb2, $01, nRst, $01, nFs2, nRst, $01, nAb2, $01, nRst, $01
+	dc.b	nE2, nFs2, $06, nRst, $04, nCs2, $02, nB1, $01, nA1, $01, nB1
+	dc.b	$01, nA1, $01, nAb1, $01, nFs1, $01, nAb1, $01, nE1, $01, nAb1
+	dc.b	$01, nB1, $01, nE1, $01, nCs1, $01, nB0, $01, nA0, $01, nRst
+	dc.b	$02, nEb1, $02, nEb1, $02, nB0, $02, nAb1, $01, nRst, $02, nE1
+	dc.b	$03, nEb1, $02, nRst, $02, nEb1, $02, nEb1, $02, nCs1, $02, nEb1
+	dc.b	$03, nE1, $02, nRst, $05, nEb1, $02, nEb1, $02, nB0, $02, nAb1
+	dc.b	$01, nRst, $02, nE1, $03, nRst, $02
 	smpsAlterVol        $0C
-	dc.b	nFs1, nRst, $01
+	dc.b	nFs1, $02
 	smpsAlterVol        $F4
-	dc.b	nAb1, nFs1, nRst, $01, nAb1, nA1, nRst, $01, nB0, nA0, nAb0, nRst
-	dc.b	$01, nA0, nAb0, nFs0
+	dc.b	nAb1, nRst, $01, nFs1, $01, nRst, $02, nAb1, $02, nA1, $02, nRst
+	dc.b	$02, nB0, $01, nA0, nAb0, $01, nA0, $01, nAb0, nFs0, $01
 	smpsStop
 
 ; FM2 Data
-TurquoiseHillAct2_FM2:
+TurquoiseHillZone2_FM2:
 	smpsSetvoice        $00
 	smpsPan             panCenter, $00
 	smpsAlterVol        $14
-	dc.b	nF1, $01, nF1, nRst, $01, nC1, nF1, nRst, $01, nE1, nEb1, nE1, nE1
-	dc.b	nRst, $01, nEb1, nEb1, nRst, $01, nBb0, nBb0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0
-	dc.b	nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0, nA0, nFs0, $01, nE0
-	dc.b	nA0, nRst, $01, nB0, nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0
-	dc.b	nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nFs0, $01, nE0, nA0, nRst, $01, nB0
-	dc.b	nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0, nA0, nA0, $01, nFs0
-	dc.b	nA0, nRst, $01, nFs0, nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0
-	dc.b	nA0, nFs0, $01, nE0, nA0, nRst, $01, nB0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0
-	dc.b	nF1, nF1, nRst, $01, nC1, nF1, nRst, $01, nE1, nEb1, nE1, nE1
-	dc.b	nRst, $01, nEb1, nEb1, nRst, $01, nBb0, nBb0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0
-	dc.b	nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0, nA0, nFs0, $01, nE0
-	dc.b	nA0, nRst, $01, nB0, nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0
-	dc.b	nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nFs0, $01, nE0, nA0, nRst, $01, nB0
-	dc.b	nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0, nA0, nA0, $01, nFs0
-	dc.b	nA0, nRst, $01, nFs0, nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0
-	dc.b	nA0, nFs0, $01, nE0, nA0, nRst, $01, nB0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0
-	dc.b	nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0, nA0, nFs0, $01, nE0
-	dc.b	nA0, nRst, $01, nB0, nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0
-	dc.b	nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nFs0, $01, nE0, nA0, nRst, $01, nB0
-	dc.b	nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0, nA0, nA0, $01, nFs0
-	dc.b	nA0, nRst, $01, nFs0, nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0
-	dc.b	nA0, nFs0, $01, nE0, nA0, nRst, $01, nB0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0
-	dc.b	nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0, nA0, nFs0, $01, nE0
-	dc.b	nA0, nRst, $01, nB0, nE0, nRst, $01, nFs0, nA0, nRst, $01, nE0
-	dc.b	nA0, nA0, $01, nFs0, nA0, nRst, $01, nFs0, nE0, nRst, $01, nFs0
-	dc.b	nA0, nRst, $01, nE0, nA0, nFs0, $01, nE0, nA0, nRst, $01, nB0
-	dc.b	nAb0, $01, nRst, $01, nF0, $01, nRst, $01, nEb0, $01, nRst, $01
-	dc.b	nF0, $01, nRst, $01, nEb0, nF0, nG0, nAb0, $01, nRst, $01, nG0
-	dc.b	$01, nRst, $01, nD0, nRst, $01, nD0, nRst, $01, nD0, nC0
+	dc.b	nF1, $01, nF1, $01, nRst, $01, nC1, $02, nF1, $01, nE1, $01
+	dc.b	nEb1, $01, nE1, $01, nE1, $01, nRst, $01, nEb1, $01, nEb1, $01
+	dc.b	nRst, $01, nBb0, $01, nBb0, $01, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nF1, $01, nF1, $01, nRst, $01, nC1, $02, nF1, $01, nE1, $01
+	dc.b	nEb1, $01, nE1, $01, nE1, $01, nRst, $01, nEb1, $01, nEb1, $01
+	dc.b	nRst, $01, nBb0, $01, nBb0, $01, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nE0, $02, nFs0, $02, nA0, $02
+	dc.b	nE0, $01, nA0, $02, nA0, $02, nFs0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $02, nFs0, $02, nA0, $02, nE0, $01, nA0, $02, nFs0, $02
+	dc.b	nE0, $01, nA0, $02, nB0, $02, nAb0, $06, nF0, $06, nRst, $04
+	dc.b	nEb0, $06, nF0, $06, nRst, $02, nEb0, $01, nF0, nG0, $01, nAb0
+	dc.b	$06, nG0, $06, nRst, $04, nD0, $01, nRst, $02, nD0, $01, nRst
+	dc.b	$02, nD0, $02, nC0, $02
 	smpsStop
 
 ; FM3 Data
-TurquoiseHillAct2_FM3:
+TurquoiseHillZone2_FM3:
 	smpsSetvoice        $00
 	smpsPan             panCenter, $00
 	smpsAlterVol        $0F
-	dc.b	nBb2, $01, nBb2, nRst, $01, nF2, nBb2, nRst, $01, nA2, nAb2, nA2, nA2
-	dc.b	nRst, $01, nAb2, nAb2, nRst, $01, nEb2, nEb2
+	dc.b	nBb2, $01, nBb2, $01, nRst, $01, nF2, $02, nBb2, $01, nA2, $01
+	dc.b	nAb2, $01, nA2, $01, nA2, $01, nRst, $01, nAb2, $01, nAb2, $01
+	dc.b	nRst, $01, nEb2, $01, nEb2, $01
 	smpsAlterVol        $0C
-	dc.b	nCs3, nRst, $01
+	dc.b	nCs3, $02
 	smpsAlterVol        $0F
-	dc.b	nCs3, $01, nRst, $01
+	dc.b	nCs3, $08
 	smpsAlterVol        $F1
-	dc.b	nC2, nCs2, nEb2, nE2, nFs2, nRst, $01, nAb2, nCs3, nRst, $01
+	dc.b	nC2, $01, nCs2, nEb2, $01, nE2, $01, nFs2, $01, nAb2, $02, nCs3
+	dc.b	$02
 	smpsAlterVol        $0F
-	dc.b	nCs3, nRst, $01
+	dc.b	nCs3, $04
 	smpsAlterVol        $F1
-	dc.b	nB2, nRst, $01, nD2, nEb2, nE2, nFs2, nRst, $01, nAb2, nCs3, nRst
-	dc.b	$01
+	dc.b	nB2, $04, nD2, $01, nEb2, $01, nE2, $01, nFs2, $01, nAb2, $02
+	dc.b	nCs3, $02
 	smpsAlterVol        $0F
-	dc.b	nCs3, $01, nRst, $01
+	dc.b	nCs3, $08
 	smpsAlterVol        $F1
-	dc.b	nC2, nCs2, nEb2, nE2, nFs2, nRst, $01, nAb2, nCs3, nRst, $01
+	dc.b	nC2, $01, nCs2, nEb2, $01, nE2, $01, nFs2, $01, nAb2, $02, nCs3
+	dc.b	$02
 	smpsAlterVol        $0F
-	dc.b	nCs3
+	dc.b	nCs3, $01
 	smpsAlterVol        $F1
-	dc.b	nB2, $01, nA2, nB2, nRst, $01, nA2, nAb2, nA2, nAb2, nRst, $01
-	dc.b	nFs2, nCs2, nCs3, nRst, $01
+	dc.b	nB2, $05, nA2, $01, nB2, $01, nA2, $01, nAb2, $01, nA2, $01
+	dc.b	nAb2, $01, nFs2, $01, nCs2, $01, nCs3, $02
 	smpsAlterVol        $0F
-	dc.b	nCs3, $01, nRst, $01
+	dc.b	nCs3, $08
 	smpsAlterVol        $F1
-	dc.b	nC2, nCs2, nEb2, nE2, nFs2, nRst, $01, nAb2, nCs3, nRst, $01
+	dc.b	nC2, $01, nCs2, nEb2, $01, nE2, $01, nFs2, $01, nAb2, $02, nCs3
+	dc.b	$02
 	smpsAlterVol        $0F
-	dc.b	nCs3, nRst, $01
+	dc.b	nCs3, $04
 	smpsAlterVol        $F1
-	dc.b	nB2, nRst, $01, nD2, nEb2, nE2, nFs2, nRst, $01, nAb2, nCs3, nRst
-	dc.b	$01
+	dc.b	nB2, $04, nD2, $01, nEb2, $01, nE2, $01, nFs2, $01, nAb2, $02
+	dc.b	nCs3, $02
 	smpsAlterVol        $0F
-	dc.b	nCs3, $01, nRst, $01
+	dc.b	nCs3, $08
 	smpsAlterVol        $F1
-	dc.b	nC2, nCs2, nEb2, nE2, nFs2, nRst, $01, nAb2, nBb2, nBb2, nRst, $01
-	dc.b	nF2, nBb2, nRst, $01, nA2, nAb2, nA2, nA2, nRst, $01, nAb2, nAb2
-	dc.b	nRst, $01, nEb2, nEb2, nFs3, nFs3, nRst, $01, nFs4, nFs4, nCs4, nCs4
-	dc.b	nRst, $01, nE4, nEb4
+	dc.b	nC2, $01, nCs2, nEb2, $01, nE2, $01, nFs2, $01, nAb2, $02, nBb2
+	dc.b	$01, nBb2, $01, nRst, $01, nF2, $02, nBb2, $01, nA2, $01, nAb2
+	dc.b	$01, nA2, $01, nA2, $01, nRst, $01, nAb2, $01, nAb2, $01, nRst
+	dc.b	$01, nEb2, $01, nEb2, $01, nFs3, $01, nFs3, $01, nFs4, $01, nFs4
+	dc.b	$01, nCs4, $01, nCs4, $01, nE4, $01, nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nFs3, nFs3, nRst, $01, nFs4
-	dc.b	nFs4, nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nFs3, $01
+	dc.b	nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4, $01, nE4, $01
+	dc.b	nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nFs3, nFs3, nRst, $01, nFs4
-	dc.b	nFs4, nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nFs3, $01
+	dc.b	nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4, $01, nE4, $01
+	dc.b	nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nB2, nC3, nCs3, nRst, $01
-	dc.b	nE3, nF3, nFs3, nB3, $01, nA3, nAb3, $01, nA3, nB3, nCs4, nRst
-	dc.b	$01, nD4, nE4, nFs3, nFs3, nRst, $01, nFs4, nFs4, nCs4, nCs4, nRst
-	dc.b	$01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nB2, $01
+	dc.b	nC3, nCs3, $01, nE3, $01, nF3, $01, nFs3, $01, nB3, $02, nA3
+	dc.b	$02, nAb3, $02, nA3, $01, nB3, $01, nCs4, $01, nD4, $01, nE4
+	dc.b	$01, nFs3, $01, nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4
+	dc.b	$01, nE4, $01, nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nFs3, nFs3, nRst, $01, nFs4
-	dc.b	nFs4, nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nFs3, $01
+	dc.b	nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4, $01, nE4, $01
+	dc.b	nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nFs3, nFs3, nRst, $01, nFs4
-	dc.b	nFs4, nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nFs3, $01
+	dc.b	nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4, $01, nE4, $01
+	dc.b	nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nCs4, nRst, $01, nB3, nA3
-	dc.b	nB3, nA3, nRst, $01, nAb3, nFs3, nAb3, nE3, nRst, $01, nAb3, nB3
-	dc.b	nE3, nCs3, nRst, $01, nB2, nA2, nFs3, nFs3, nRst, $01, nFs4, nFs4
-	dc.b	nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nCs4, $02
+	dc.b	nB3, $01, nA3, $01, nB3, $01, nA3, $01, nAb3, $01, nFs3, $01
+	dc.b	nAb3, $01, nE3, $01, nAb3, $01, nB3, $01, nE3, $01, nCs3, $01
+	dc.b	nB2, $01, nA2, $01, nFs3, $01, nFs3, $01, nFs4, $01, nFs4, $01
+	dc.b	nCs4, $01, nCs4, $01, nE4, $01, nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nFs3, nFs3, nRst, $01, nFs4
-	dc.b	nFs4, nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nFs3, $01
+	dc.b	nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4, $01, nE4, $01
+	dc.b	nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nFs3, nFs3, nRst, $01, nFs4
-	dc.b	nFs4, nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nFs3, $01
+	dc.b	nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4, $01, nE4, $01
+	dc.b	nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nB2, nC3, nCs3, nRst, $01
-	dc.b	nE3, nF3, nFs3, nB3, $01, nA3, nAb3, $01, nA3, nB3, nCs4, nRst
-	dc.b	$01, nD4, nE4, nFs3, nFs3, nRst, $01, nFs4, nFs4, nCs4, nCs4, nRst
-	dc.b	$01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nB2, $01
+	dc.b	nC3, nCs3, $01, nE3, $01, nF3, $01, nFs3, $01, nB3, $02, nA3
+	dc.b	$02, nAb3, $02, nA3, $01, nB3, $01, nCs4, $01, nD4, $01, nE4
+	dc.b	$01, nFs3, $01, nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4
+	dc.b	$01, nE4, $01, nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nFs3, nFs3, nRst, $01, nFs4
-	dc.b	nFs4, nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nFs3, $01
+	dc.b	nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4, $01, nE4, $01
+	dc.b	nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nFs3, nFs3, nRst, $01, nFs4
-	dc.b	nFs4, nCs4, nCs4, nRst, $01, nE4, nEb4
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nFs3, $01
+	dc.b	nFs3, $01, nFs4, $01, nFs4, $01, nCs4, $01, nCs4, $01, nE4, $01
+	dc.b	nEb4, $01
 	smpsAlterVol        $0F
-	dc.b	nEb4
+	dc.b	nEb4, $01
 	smpsAlterVol        $F1
-	dc.b	nCs4, nRst, $01
+	dc.b	nCs4, $01
 	smpsAlterVol        $0F
-	dc.b	nCs4
+	dc.b	nCs4, $01
 	smpsAlterVol        $F1
-	dc.b	nB3, nA3, nA3, nRst, $01, nB3, nCs4, nCs4, nRst, $01, nB3, nA3
-	dc.b	nB3, nA3, nRst, $01, nAb3, nFs3, nAb3, nE3, nRst, $01, nAb3, nB3
-	dc.b	nE3, nCs3, nRst, $01, nB2, nA2, nRst, $01, nB1, nB1, nRst, $01
-	dc.b	nA1, nEb2, nRst, $01, nB1, nRst, $01, nA1, nRst, $01, nA1, nA1
-	dc.b	nRst, $01, nAb1, nA1, $01, nB1, nRst, $02, nB1, nB1, nRst, $01
-	dc.b	nA1, nEb2, nRst, $01, nB1, nRst, $01
+	dc.b	nB3, $01, nA3, $01, nA3, $01, nB3, $01, nCs4, $01, nCs4, $02
+	dc.b	nB3, $01, nA3, $01, nB3, $01, nA3, $01, nAb3, $01, nFs3, $01
+	dc.b	nAb3, $01, nE3, $01, nAb3, $01, nB3, $01, nE3, $01, nCs3, $01
+	dc.b	nB2, $01, nA2, $01, nRst, $02, nB1, $02, nB1, $02, nA1, $02
+	dc.b	nEb2, $01, nRst, $02, nB1, $03, nA1, $02, nRst, $02, nA1, $02
+	dc.b	nA1, $02, nAb1, $02, nA1, $03, nB1, $02, nRst, $05, nB1, $02
+	dc.b	nB1, $02, nA1, $02, nEb2, $01, nRst, $02, nB1, $03, nRst, $02
 	smpsAlterVol        $0A
-	dc.b	nEb2, nRst, $01
+	dc.b	nEb2, $02
 	smpsAlterVol        $F6
-	dc.b	nE2, nEb2, nRst, $01, nEb2, nEb2, nRst, $01, nE1, nEb1, nCs1, nRst
-	dc.b	$01, nE1, nCs1, nB0
+	dc.b	nE2, nRst, $01, nEb2, $01, nRst, $02, nEb2, $02, nEb2, $02, nRst
+	dc.b	$02, nE1, $01, nEb1, nCs1, $01, nE1, $01, nCs1, nB0, $01
 	smpsStop
 
 ; FM4 Data
-TurquoiseHillAct2_FM4:
+TurquoiseHillZone2_FM4:
 	smpsStop
 
 ; FM5 Data
-TurquoiseHillAct2_FM5:
+TurquoiseHillZone2_FM5:
 	smpsStop
 
 ; PSG1 Data
-TurquoiseHillAct2_PSG1:
+TurquoiseHillZone2_PSG1:
 	smpsStop
 
 ; PSG2 Data
-TurquoiseHillAct2_PSG2:
+TurquoiseHillZone2_PSG2:
 	smpsStop
 
 ; PSG3 Data
-TurquoiseHillAct2_PSG3:
+TurquoiseHillZone2_PSG3:
 	smpsPSGform         $E7
-	dc.b	nRst, $04
+	dc.b	nRst, $10
 	smpsPSGvoice        fTone_02
 	smpsPSGAlterVol     $02
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $03, nA6, $01
+	dc.b	nA6, $01, nA6, $02, nA6, $01, nA6, $04, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $03, nA6, $01, nA6, $01, nA6, $02
+	dc.b	nA6, $01, nA6, $04, nA6, $01, nA6, $01, nA6, $01, nA6, $01
+	dc.b	nA6, $03, nA6, $01, nA6, $01, nA6, $02, nA6, $01, nA6, $04
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $03, nA6, $01
+	dc.b	nA6, $01, nA6, $02, nA6, $01, nA6, $04, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $03, nA6, $01, nA6, $01, nA6, $02
+	dc.b	nA6, $01, nA6, $04, nA6, $01, nA6, $01, nA6, $01, nA6, $01
+	dc.b	nA6, $03, nA6, $01, nA6, $01, nA6, $02, nA6, $01, nA6, $04
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $03, nA6, $01
+	dc.b	nA6, $01, nA6, $02, nA6, $01, nA6, $04, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $04, nA6, $01, nA6, $03, nA6, $01
 	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $01
-	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6
+	dc.b	nA6, $01, nA6, $03, nA6, $01, nA6, $01, nA6, $02, nA6, $01
+	dc.b	nA6, $04, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $03
+	dc.b	nA6, $01, nA6, $01, nA6, $02, nA6, $01, nA6, $04, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $03, nA6, $01, nA6, $01
+	dc.b	nA6, $02, nA6, $01, nA6, $04, nA6, $01, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $03, nA6, $01, nA6, $01, nA6, $02, nA6, $01
+	dc.b	nA6, $04, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $03
+	dc.b	nA6, $01, nA6, $01, nA6, $02, nA6, $01, nA6, $04, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $03, nA6, $01, nA6, $01
+	dc.b	nA6, $02, nA6, $01, nA6, $04, nA6, $01, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $03, nA6, $01, nA6, $01, nA6, $02, nA6, $01
+	dc.b	nA6, $04, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $04
+	dc.b	nA6, $01, nA6, $03, nA6, $01, nA6, $01, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $03, nA6, $01
+	dc.b	nA6, $01, nA6, $02, nA6, $01, nA6, $04, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $03, nA6, $01, nA6, $01, nA6, $02
+	dc.b	nA6, $01, nA6, $04, nA6, $01, nA6, $01, nA6, $01, nA6, $01
+	dc.b	nA6, $03, nA6, $01, nA6, $01, nA6, $02, nA6, $01, nA6, $04
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $03, nA6, $01
+	dc.b	nA6, $01, nA6, $02, nA6, $01, nA6, $04, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $03, nA6, $01, nA6, $01, nA6, $02
+	dc.b	nA6, $01, nA6, $04, nA6, $01, nA6, $01, nA6, $01, nA6, $01
+	dc.b	nA6, $03, nA6, $01, nA6, $01, nA6, $02, nA6, $01, nA6, $04
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $03, nA6, $01
+	dc.b	nA6, $01, nA6, $02, nA6, $01, nA6, $04, nA6, $01, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $04, nA6, $01, nA6, $03, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $01, nA6, $04, nA6, $04, nA6, $04
+	dc.b	nA6, $04, nA6, $04, nA6, $05, nA6, $01, nA6, $02, nA6, $01
+	dc.b	nA6, $01, nA6, $01, nA6, $03, nA6, $04, nA6, $04, nA6, $04
+	dc.b	nA6, $02, nA6, $01, nA6, $01, nA6, $01, nA6, $01, nA6, $04
+	dc.b	nA6, $04, nA6, $01, nA6, $01, nA6, $01, nA6
 	smpsStop
 
-; Voices were not within the file: they are the first 1 voices located at 2089 bytes from the start of the song.
-; The following label is a dummy label and should be moved to the correct location.
-TurquoiseHillAct2_Voices:
+TurquoiseHillZone2_Voices:
 ;	Voice $00
 ;	$3D
 ;	$01, $01, $02, $01, 	$4C, $0F, $50, $12, 	$0B, $05, $01, $02
@@ -500,3 +566,4 @@ TurquoiseHillAct2_Voices:
 	smpsVcDecayLevel    $00, $01, $0F, $01
 	smpsVcReleaseRate   $0F, $0F, $0F, $0F
 	smpsVcTotalLevel    $00, $27, $28, $17
+
