@@ -4889,7 +4889,7 @@ CharaSelectBGPalTable:
 ;----------------------------------------------------------------------------
 ; byte_3EA0:
 MusicList: zoneOrderedTable 1,1
-	zoneTableEntry.b MusID_EHZ_2P	; Turquoise Hill zone 1
+	zoneTableEntry.b MusID_EHZ	; Turquoise Hill zone 1
 	zoneTableEntry.b MusID_EHZ_2P	; Turquoise Hill zone 2
 	zoneTableEntry.b MusID_MTZ	; WZ
 	zoneTableEntry.b MusID_OOZ	; Zone 3
@@ -86131,18 +86131,21 @@ loc_3F9CE:
 	neg.w	d2
 	subi.w	#$10,d2
 	sub.w	d2,d0
-	bcc.s	+
+	bcc.s	.check_hurt
 	addi.w	#$18,d0
 	subi.w	#$20,y_pos(a0)
 	move.w	#-$A00,y_vel(a0)
 	bset	#1,status(a0)
 	bclr	#3,status(a0)
 	clr.b	jumping(a0)
+	cmpi.b	#ObjID_Tails,id(a0)
+	bne.s	+
 	move.b	#2,double_jump_flag(a0)
++
 	move.b	#AniIDSonAni_Spring,anim(a0)
 	move.b	#SndID_Spring,d0
 	jmp	(PlaySound).l
-+
+.check_hurt:
 	bra.s	BranchTo_Touch_ChkHurt
 ; ===========================================================================
 
